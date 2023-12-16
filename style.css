@@ -444,8 +444,7 @@
     position: relative;
     margin-left: 50px;
 }
-.name-list ul li{
-    
+.name-list ul li{ 
     list-style: none;
     display: inline-flex;
     margin: 40px;
