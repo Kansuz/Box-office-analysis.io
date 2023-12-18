@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <!-- <meta chaset="UTF-8"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxoffice Analysis</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rethink+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+        <div class="title">Box Office Analysis</div>          
+    </section>
+    <section class="container_data">
+        <div class="menu">
+            <nav>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">ABOUT THE PROJECT</a></li>
+                        <li><a href="data.html">DATA</a></li>
+                        <li><a href="code.html">ABOUT THE CODE</a></li>
+                        <li><a href="results.html">RESULTS AND CONCLUSIONS</a></li>
+                        <li><a href="about_us.html">ABOUT THE GROUP</a></li>                    
+                    </ul>
+                </div>            
+            </nav>
+        </div>
+
+        <div class="text-box">About the code</div>
+
+        <div class="containerdos_data">
+
+            <div class="paragraph_code">
+                <h3>What exactly does our code do?</h3>
+                <p>In summary, our program gathers information about categories that we are interested in from the dataset. 
+                    It counts how many times every value appears and sorts from the higher to the lower one. Thanks to it we
+                receive clear information about which director, month, year and movie genre provides the highest amount of best selling movies.</p>
+            </div>
+            
+        </div>
+
+        <div class="containerdos_data">
+            
+            <div class="paragraphdos_code_and_photo">
+
+                <div class="paragraphdos_code">
+                    <h3>How does it work?</h3>
+                    <p> In our code, we use <i>DataFrame</i>s which is a dwo-dimensional labeled data stucture and which can process structured 
+                        and semi-structured data. The core of our solution contains six files. Everything starts with <i>main.py</i>, which loads 
+                        data about every movie. Then <i>schema.py</i> sorts all our data from our dataset. The last four files 
+                        (<i>bestMonth.py</i>, <i>bestYear.py</i>, <i>director.py</i> and <i>genre.py</i>) work in the same way. They get information 
+                        about a director, a genre or a release date from every movie. Then they count how many times every information appears. 
+                        Finally, files sort the category from the best to the worst by amount.</p>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>Check other files in our repository</h1>
+                </div>
+
+                <a href="https://github.com/girale06/box-office-analysis"><img class="link_photo emphasize-image" src="githublong.jpg"></a>  
+
+        </div>
+            
+            <div class="code_photo">
+                <img src="code.png">
+                <h1>Code we used to check which movie genre has the best selling movies</h1>
+            </div>
+
+        </div>
+
+        
+        <div class="containerdos_data">
+            <div class="paragraphuno">
+                <h3>Detailed steps for reproducing our study</h3>
+                <br>
+                <br>
+                <h2>1. Java and Python installation</h2>
+                <br>
+                <p><i>$sudo apt install default-jre pip</i></p>
+                <br>
+                <br>
+                <br>
+                <h2>2. Spark installation</h2>
+                <br>
+                <p><i>$pip install pyspark</i></p>
+                <br>
+                <br>
+                <br>
+                <h2>3. Environment configuration</h2>
+                <!-- <br> -->
+                <p><i>/usr/local/spark/bin </i>is added to the PATH in the <i>~/.profile file</i>. After updating the <i>PATH</i> in the current session.</p>
+                <br>
+                <br>
+                <p><i>$ echo 'PATH="$PATH:/usr/local/spark/bin"' >> ~/.profile</i></p>
+                <br>
+                <p><i>$ source ~/.profile</i></p>
+                <br>
+                <br>
+                <h2>5. File download </h2>
+                <br>
+                <p>The folders scripts and data can be created manually and copy the datasets and scripts to the corresponding ones, 
+                    although it is also possible to download this repository and unzip it, by Download ZIP. To download the full dataset 
+                    go to this
+                    <a href="https://console.cloud.google.com/storage/browser/cloudandbigdataproject-408414;tab=objects?forceOnBucketsSortingFiltering=false&authuser=1&project=cloudandbigdataproject-408414&prefix=&forceOnObjectsSortingFiltering=false">site</a> 
+                    and write to <b>sdobrev@ucm.es</b> with your mail to get access.</p>
+                <br>
+                <br>
+                <h2>6. On Cloud</h2>
+                <br>
+                <p>Put everything in a Cloud Bucket and create a cluster by running the following code:</p>
+                <br>
+                <br>
+                <p><i>gcloud dataproc clusters create example-cluster --region europe-west6 --master-boot-disk-size 50GB --worker-boot-disk-size 50GB --enable-component-gateway</i></p>
+                <br>
+                <br>
+                <p>Then submit the PySpack job (your<i>_script.py</i> is the script you want to run!)</p>
+                <br>
+                <br>
+                <p><i>gcloud dataproc jobs submit pyspark \
+                    <br>
+                    --cluster=example-cluster \
+                    <br>
+                    --region=europe-west6 \
+                    <br>
+                    --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar \
+                    <br>
+                    gs://cloudandbigdataproject-408414/your_script.py</i></p>
+
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
